@@ -32,7 +32,6 @@ Route::post('upload-contact', [ContactController::class,'uploadContact']);
 //Mailchimp
 Route::post('newsletter', [NewsletterController::class,'subscribeNewsletter']);
 
-
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('users/{user}', [UserController::class, 'show']);
