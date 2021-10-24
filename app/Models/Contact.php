@@ -12,6 +12,6 @@ class Contact extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'fullname', 'email', 'phone', 'subject', 'comment'
+        'fullname', 'email', 'phone', 'subject', 'comment','time'
     ];
 }

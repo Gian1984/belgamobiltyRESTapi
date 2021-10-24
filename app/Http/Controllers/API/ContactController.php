@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Carbon\Carbon;
 
 class ContactController extends Controller
 {
@@ -22,6 +23,7 @@ class ContactController extends Controller
             'phone'=> $request->phone,
             'subject'=> $request->subject,
             'comment'=> $request->comment,
+            'time'=> Carbon::now('Europe/Rome'),
         ]);
 
         return response()->json( $contact,200);

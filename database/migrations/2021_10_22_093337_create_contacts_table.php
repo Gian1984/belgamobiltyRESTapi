@@ -21,6 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('subject')->nullable();
             $table->mediumText('comment')->nullable();
             $table->boolean('was_answered')->default(false);
+            $table->string('time')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
