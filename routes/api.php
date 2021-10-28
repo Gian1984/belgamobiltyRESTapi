@@ -28,10 +28,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']);
+
 
 Route::post('upload-contact', [ContactController::class,'uploadContact']);
+
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']);
 
 //Mailchimp
 Route::post('newsletter', [NewsletterController::class,'subscribeNewsletter']);
@@ -41,8 +43,6 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('users/{user}', [UserController::class, 'show']);
     Route::patch('users/{user}', [UserController::class, 'update']);
     Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
-
-
 
     Route::patch('contact/{contact}/replied', [ContactController::class,'repliedContact']);
     Route::resource('/contact', ContactController::class);
