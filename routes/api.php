@@ -7,6 +7,7 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\NewsletterController;
+use App\Http\Controllers\API\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']);
 
 Route::post('upload-contact', [ContactController::class,'uploadContact']);
 
@@ -33,16 +36,12 @@ Route::post('upload-contact', [ContactController::class,'uploadContact']);
 Route::post('newsletter', [NewsletterController::class,'subscribeNewsletter']);
 
 Route::group(['middleware' => 'auth:api'], function() {
-    Route::get('/users', [UserController::class, 'index']);
-    Route::get('users/{user}', [UserController::class, 'show']);
-    Route::patch('users/{user}', [UserController::class, 'update']);
-    Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
+    Route::get('/users', [AuthController::class, 'index']);
+    Route::get('users/{user}', [AuthController::class, 'show']);
+    Route::patch('users/{user}', [AuthController::class, 'update']);
+    Route::get('users/{user}/orders', [AuthController::class, 'showOrders']);
 
-    Route::patch('orders/{order}/deliver', [OrderController::class,'deliverOrder']);
-    Route::resource('/orders', OrderController::class);
 
-    Route::patch('products/{product}/units/add', [ProductController::class,'updateUnits']);
-    Route::resource('/products', ProductController::class)->except(['index', 'show']);
 
     Route::patch('contact/{contact}/replied', [ContactController::class,'repliedContact']);
     Route::resource('/contact', ContactController::class);

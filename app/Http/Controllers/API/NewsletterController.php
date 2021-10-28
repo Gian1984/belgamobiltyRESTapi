@@ -10,12 +10,19 @@ class NewsletterController extends Controller
 {
     public function subscribeNewsletter(Request $request)
     {
+
+        $request->validate([
+            'email' => 'required|email|unique',
+        ]);
+
         $contact = Newsletter::create([
 
-            'email_address'=> $request->email_address,
+            'email_address'=> $request->email,
 
 
         ]);
+
+
 
         $mailchimp = new \MailchimpMarketing\ApiClient();
 
@@ -28,7 +35,7 @@ class NewsletterController extends Controller
 //    $response = $mailchimp->lists->getListMembersInfo('994e02591b'); --> get all the member by list id
 
         $response = $mailchimp->lists->addListMember('994e02591b',[
-            'email_address'=>'gl.coppola@gmail.com',
+            'email_address'=> $request->email,
             'status'=>'subscribed',
         ]);
 
