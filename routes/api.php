@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ContactController;
@@ -25,8 +26,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
+Route::post('login', [UserController::class, 'login']);
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']);
 
@@ -36,10 +37,10 @@ Route::post('upload-contact', [ContactController::class,'uploadContact']);
 Route::post('newsletter', [NewsletterController::class,'subscribeNewsletter']);
 
 Route::group(['middleware' => 'auth:api'], function() {
-    Route::get('/users', [AuthController::class, 'index']);
-    Route::get('users/{user}', [AuthController::class, 'show']);
-    Route::patch('users/{user}', [AuthController::class, 'update']);
-    Route::get('users/{user}/orders', [AuthController::class, 'showOrders']);
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('users/{user}', [UserController::class, 'show']);
+    Route::patch('users/{user}', [UserController::class, 'update']);
+    Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
 
 
 
