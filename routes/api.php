@@ -51,6 +51,10 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
 
 
+    Route::patch('orders/{order}/deliver', [OrderController::class,'deliverOrder']);
+    Route::resource('/orders', OrderController::class);
+
+
     Route::patch('products/{product}/units/add', [ProductController::class,'updateUnits']);
     Route::resource('/products', ProductController::class)->except(['index', 'show']);
 
