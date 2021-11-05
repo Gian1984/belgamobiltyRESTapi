@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
 class CreateOrdersTable extends Migration
@@ -18,11 +19,25 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('user_id');
             $table->string('amount');
+            $table->string('pickupaddress');
+            $table->string('dropoffaddress');
+            $table->string('duration');
+            $table->string('distance');
+            $table->string('date');
+            $table->string('referencecode');
+            $table->string('pickupsign');
+            $table->string('flight');
+            $table->string('notes');
+            $table->string('lastname');
+            $table->string('firstname');
+            $table->string('email');
+            $table->string('phone');
             $table->boolean('is_complete')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.

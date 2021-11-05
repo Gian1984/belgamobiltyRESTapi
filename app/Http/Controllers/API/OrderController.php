@@ -44,7 +44,20 @@ class OrderController extends Controller
             $order = Order::create([
                 'product_id' => $request->product_id,
                 'user_id' => Auth::id(),
+                'pickupaddress' => $request->pickupaddress,
+                'dropoffaddress' => $request->dropoffaddress,
+                'duration' => $request->duration,
+                'distance' => $request->distance,
+                'date' => $request->date,
                 'amount' => $request->amount,
+                'pickupsign'=> $request->pickupsign,
+                'flight'=> $request->flight,
+                'referencecode'=> $request->referencecode,
+                'notes'=> $request->notes,
+                'lastname'=> $request->lastname,
+                'firstname'=> $request->firstname,
+                'email'=> $request->email,
+                'phone'=> $request->phone,
                 'is_complete' => $request->is_complete,
             ]);
 

@@ -18,7 +18,6 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            'units' => $request->units,
             'pricehour' => $request->pricehour,
             'pricekm' => $request->pricekm,
             'image' => $request->image
@@ -48,23 +47,12 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $status = $product->update(
-            $request->only(['name', 'description', 'units', 'pricehour', 'pricekm','image'])
+            $request->only(['name', 'description', 'pricehour', 'pricekm','image'])
         );
 
         return response()->json([
             'status' => $status,
             'message' => $status ? 'Product Updated!' : 'Error Updating Product'
-        ]);
-    }
-
-    public function updateUnits(Request $request, Product $product)
-    {
-        $product->units = $product->units + $request->get('units');
-        $status = $product->save();
-
-        return response()->json([
-            'status' => $status,
-            'message' => $status ? 'Units Added!' : 'Error Adding Product Units'
         ]);
     }
 

@@ -17,7 +17,6 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->unsignedInteger('units')->default(0);
             $table->double('pricehour');
             $table->double('pricekm');
             $table->string('image');
