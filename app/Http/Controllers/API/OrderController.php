@@ -101,25 +101,27 @@ class OrderController extends Controller
     public function submitOrderConfirm(Request $request)
     {
 
-        $success = [
-            'product_id' => Product::find($request->product_id),
-            'user_id' => User::find($request->user_id),
-            'pickupaddress' => $request->pickupaddress,
-            'dropoffaddress' => $request->dropoffaddress,
-            'duration' => $request->duration,
-            'distance' => $request->distance,
-            'date' => $request->date,
-            'amount' => $request->amount,
-            'pickupsign'=> $request->pickupsign,
-            'flight'=> $request->flight,
-            'referencecode'=> $request->referencecode,
-            'notes'=> $request->notes,
-            'lastname'=> $request->lastname,
-            'firstname'=> $request->firstname,
-            'email'=> $request->email,
-            'phone'=> $request->phone,
-            'is_complete' => $request->is_complete,
-        ];
+        $success = $request;
+
+//            'product_id' => Product::find($request->product_id),
+//            'user_id' => User::find($request->user_id),
+//            'pickupaddress' => $request->pickupaddress,
+//            'dropoffaddress' => $request->dropoffaddress,
+//            'duration' => $request->duration,
+//            'distance' => $request->distance,
+//            'date' => $request->date,
+//            'amount' => $request->amount,
+//            'pickupsign'=> $request->pickupsign,
+//            'flight'=> $request->flight,
+//            'referencecode'=> $request->referencecode,
+//            'notes'=> $request->notes,
+//            'lastname'=> $request->lastname,
+//            'firstname'=> $request->firstname,
+//            'email'=> $request->email,
+//            'phone'=> $request->phone,
+//            'is_complete' => $request->is_complete,
+//
+//        ];
 
 
         Mail::send('email.orderSuccess', ['success' => $success], function($message) use($request){

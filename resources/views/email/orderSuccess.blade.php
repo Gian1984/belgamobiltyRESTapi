@@ -83,7 +83,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
                     <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Forget Password Email</h1>
+                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Order summary</h1>
                     </td>
                 </tr>
             </table>
@@ -96,8 +96,52 @@
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="margin: 0;"> You can reset password from bellow link:<br><br>
+                        <p style="margin: 0;"> Order Recap:<br><br></p>
 
+                        <p style="margin: 0; color: black"> Pick-up address:<br>
+                           <span style="color: #6b7280">{{ $success->pickupaddress }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Drop-off address:<br>
+                            <span style="color: #6b7280">{{ $success->dropoffaddress }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Duration:<br>
+                            <span style="color: #6b7280">{{ $success->duration }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Distance:<br>
+                            <span style="color: #6b7280">{{ $success->distance }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Pick-up hour & date:<br>
+                            <span style="color: #6b7280">{{ $success->date }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Pick-up sign:<br>
+                            <span style="color: #6b7280">{{ $success->pickupsign }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Reference code:<br>
+                            <span style="color: #6b7280">{{ $success->referencecode }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Flight number:<br>
+                            <span style="color: #6b7280">{{ $success->flight }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Notes for the chauffeur :<br>
+                            <span style="color: #6b7280">{{ $success->notes }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Passenger lastname:<br>
+                            <span style="color: #6b7280">{{ $success->lastname }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Passenger firstname:<br>
+                            <span style="color: #6b7280">{{ $success->firstname }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Passenger email:<br>
+                            <span style="color: #6b7280">{{ $success->email }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black">Passenger phone:<br>
+                            <span style="color: #6b7280">{{ $success->phone }}</span><br><br>
+                        </p>
+                        <p style="margin: 0; color: black"> Total amount:<br>
+                            <span style="color: #6b7280">€ {{ $success->amount / 100}}</span><br><br>
+                        </p>
+
+                        <p style="margin: 0; color: black">Thank you!<br><br></p>
                     </td>
                 </tr>
             </table>
