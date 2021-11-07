@@ -12,7 +12,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return response()->json(Order::with(['product'])->get(),200);
+        return response()->json(Order::with(['product','user'])->get(),200);
     }
 
     public function deliverOrder(Order $order)
