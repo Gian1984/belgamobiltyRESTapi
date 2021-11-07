@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 
     Route::patch('orders/{order}/deliver', [OrderController::class,'deliverOrder']);
     Route::resource('/orders', OrderController::class);
-
+    Route::post('order-success', [OrderController::class, 'submitOrderConfirm']);
 
     Route::patch('products/{product}/units/add', [ProductController::class,'updateUnits']);
     Route::resource('/products', ProductController::class)->except(['index', 'show']);
