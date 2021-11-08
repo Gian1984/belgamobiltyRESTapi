@@ -28,6 +28,10 @@ class Order extends Model
         'firstname',
         'email',
         'phone',
+        'transactionID',
+        'cardBrand',
+        'lastFour',
+        'expire',
         'is_complete'
     ];
 

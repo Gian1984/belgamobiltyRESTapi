@@ -32,6 +32,10 @@ class CreateOrdersTable extends Migration
             $table->string('firstname')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('transactionID')->nullable();
+            $table->string('cardBrand')->nullable();
+            $table->string('lastFour')->nullable();
+            $table->string('expire')->nullable();
             $table->boolean('is_complete')->default(false);
             $table->timestamps();
             $table->softDeletes();
