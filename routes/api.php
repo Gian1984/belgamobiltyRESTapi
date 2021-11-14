@@ -8,6 +8,7 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\NewsletterController;
+use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\ForgotPasswordController;
 
 /*
@@ -31,6 +32,8 @@ Route::post('login', [UserController::class, 'login']);
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']);
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']);
 
+Route::post('/upload-faq', [FaqController::class,'uploadFaq']);
+
 
 Route::post('upload-contact', [ContactController::class,'uploadContact']);
 
@@ -49,6 +52,9 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('users/{user}', [UserController::class, 'show']);
     Route::patch('users/{user}', [UserController::class, 'update']);
     Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
+
+    Route::patch('faqs/{faq}/replied', [FaqController::class,'repliedFaq']);
+    Route::resource('/faqs', FaqController::class);
 
 
     Route::patch('orders/{order}/deliver', [OrderController::class,'deliverOrder']);
