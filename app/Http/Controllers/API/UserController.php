@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -73,4 +74,10 @@ class UserController extends Controller
     {
         return response()->json($user->orders()->with(['product'])->get());
     }
+
+    public function destroy($id)
+    {
+        return User::findOrFail($id)->delete();
+    }
+
 }
