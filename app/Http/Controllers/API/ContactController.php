@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -25,6 +26,15 @@ class ContactController extends Controller
             'comment'=> $request->comment,
             'time'=> Carbon::now('Europe/Rome'),
         ]);
+
+        $success = $request;
+
+        Mail::send('email.contactRequest', ['success' => $success], function($message) use($request){
+            $message->to($request->email);
+//            $message->to('booking@belgamobility.be');
+
+            $message->subject('Nouvelle demande de contact');
+        });
 
         return response()->json( $contact,200);
     }

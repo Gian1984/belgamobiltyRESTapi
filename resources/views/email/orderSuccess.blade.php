@@ -70,7 +70,7 @@
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
                         <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="https://www.createweb.info/img/create.png" width="100" height="100" style="display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
+                            <img alt="Logo" src="https://www.belgamobility.be/wp-content/uploads/2017/11/BELGA-MOBILITY.png" width="100" height="100" style="display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
                         </a>
                     </td>
                 </tr>
@@ -156,7 +156,7 @@
                 <!-- ADDRESS -->
                 <tr>
                     <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
-                        <p style="margin: 0;">CreateWeb.info all right reserved</p>
+                        <p style="margin: 0;">© 2021 Belga Mobility, Inc. All rights reserved.</p>
                     </td>
                 </tr>
             </table>
