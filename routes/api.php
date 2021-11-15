@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('users/{user}', [UserController::class, 'show']);
     Route::patch('users/{user}', [UserController::class, 'update']);
+    Route::delete('users/{user}', [UserController::class, 'destroy']);
     Route::get('users/{user}/orders', [UserController::class, 'showOrders']);
 
     Route::patch('faqs/{faq}/replied', [FaqController::class,'repliedFaq']);

@@ -31,6 +31,7 @@ class User extends Authenticatable
         'region',
         'country',
         'zip',
+        'is_admin'
     ];
 
     /**

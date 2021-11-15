@@ -4,11 +4,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -73,6 +72,36 @@ class UserController extends Controller
     public function showOrders(User $user)
     {
         return response()->json($user->orders()->with(['product'])->get());
+    }
+
+    public function update(Request $request, User $user)
+    {
+
+
+        $status = $user->update(
+            $request->only(
+                [
+                    'firstname',
+                    'lastname',
+                    'email',
+                    'phone',
+                    'streetaddress',
+                    'city',
+                    'region',
+                    'country',
+                    'zip',
+
+                ]
+            )
+        );
+
+        $user->where('id', $user->id)->update(array('is_admin' => $request->admin));
+
+
+        return response()->json([
+            'status' => $status,
+            'message' => $status ? 'User Updated!' : 'Error Updating User'
+        ]);
     }
 
     public function destroy($id)
