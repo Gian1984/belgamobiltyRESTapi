@@ -38,7 +38,7 @@ Route::post('/upload-faq', [FaqController::class,'uploadFaq']);
 Route::post('upload-contact', [ContactController::class,'uploadContact']);
 
 Route::get('/products', [ProductController::class,'index']);
-Route::post('/upload-file/{product}', [ProductController::class,'uploadFile']);
+Route::post('/upload-file', [ProductController::class,'uploadFile']);
 Route::get('/products/{product}', [ProductController::class,'show']);
 
 //Mailchimp
