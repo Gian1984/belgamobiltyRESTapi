@@ -35,11 +35,12 @@ class ProductController extends Controller
         return response()->json($product,200);
     }
 
-    public function uploadFile(Request $request)
+    public function uploadFile(Request $request, Product $product)
     {
         if($request->hasFile('image')){
             $name = time()."_".$request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'), $name);
+            $product->where('id', $product->id)->update(array('image' => "http://localhost/images/$name"));
         }
         return response()->json(asset("images/$name"),201);
     }

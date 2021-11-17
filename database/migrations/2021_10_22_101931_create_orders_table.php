@@ -20,9 +20,9 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('amount');
             $table->string('pickupaddress');
-            $table->string('dropoffaddress');
+            $table->string('dropoffaddress')->nullable();
             $table->string('duration');
-            $table->string('distance');
+            $table->string('distance')->nullable();
             $table->string('date');
             $table->string('referencecode')->nullable();
             $table->string('pickupsign')->nullable();
