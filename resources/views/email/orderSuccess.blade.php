@@ -98,6 +98,10 @@
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
                         <p style="margin: 0;"> Order Recap:<br><br></p>
 
+
+                        <p style="margin: 0; color: black">Hello {{ $success->name1 }} {{$success->name2}} ! <br>
+                            <span style="color: #6b7280">We have successfully received your reservation from {{$success->email}} account.</span><br><br>
+                        </p>
                         <p style="margin: 0; color: black"> Pick-up address:<br>
                            <span style="color: #6b7280">{{ $success->pickupaddress }}</span><br><br>
                         </p>
@@ -125,18 +129,16 @@
                         <p style="margin: 0; color: black"> Notes for the chauffeur :<br>
                             <span style="color: #6b7280">{{ $success->notes }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Passenger lastname:<br>
+                        <p style="margin: 0; color: black">Additional passenger lastname:<br>
                             <span style="color: #6b7280">{{ $success->lastname }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Passenger firstname:<br>
+                        <p style="margin: 0; color: black">Additional passenger  Passenger firstname:<br>
                             <span style="color: #6b7280">{{ $success->firstname }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Passenger email:<br>
-                            <span style="color: #6b7280">{{ $success->email }}</span><br><br>
-                        </p>
-                        <p style="margin: 0; color: black">Passenger phone:<br>
+                        <p style="margin: 0; color: black">Additional passenger phone:<br>
                             <span style="color: #6b7280">{{ $success->phone }}</span><br><br>
                         </p>
+
                         <p style="margin: 0; color: black"> Total amount:<br>
                             <span style="color: #6b7280">€ {{ $success->amount / 100}}</span><br><br>
                         </p>

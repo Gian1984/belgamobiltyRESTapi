@@ -109,6 +109,7 @@ class OrderController extends Controller
 
         Mail::send('email.orderSuccess', ['success' => $success], function($message) use($request){
             $message->to($request->email);
+            //            $message->to('booking@belgamobility.be');
             $message->subject('Order summary');
         });
 
