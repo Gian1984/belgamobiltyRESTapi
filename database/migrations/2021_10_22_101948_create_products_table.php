@@ -20,10 +20,14 @@ class CreateProductsTable extends Migration
             $table->double('pricehour');
             $table->double('pricekm');
             $table->string('image');
+            $table->string('kmhours');
+            $table->string('luggage');
+            $table->string('passengers');
             $table->timestamps();
             $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.
