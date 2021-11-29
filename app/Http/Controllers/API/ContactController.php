@@ -31,7 +31,7 @@ class ContactController extends Controller
 
         Mail::send('email.contactRequest', ['success' => $success], function($message) use($request){
             $message->to($request->email);
-//            $message->to('booking@belgamobility.be');
+            $message->to('info@belgamobility.com');
 
             $message->subject('Nouvelle demande de contact');
         });
