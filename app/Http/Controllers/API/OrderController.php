@@ -111,7 +111,7 @@ class OrderController extends Controller
             $message->to($request->email);
             $message->to('info@belgamobility.com');
 
-            $message->subject('Order summary');
+            $message->subject('Récapitulatif de la commande');
         });
 
         return response()->json($success);

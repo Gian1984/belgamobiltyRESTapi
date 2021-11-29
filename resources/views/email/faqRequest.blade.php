@@ -83,7 +83,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
                     <td bgcolor="#d4ac6c" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Demande de contact</h1>
+                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Questions liées aux commandes</h1>
                     </td>
                 </tr>
             </table>
@@ -96,13 +96,10 @@
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="margin: 0;">Nouvelle demande de contact:<br><br></p>
+                        <p style="margin: 0;">Nouvelle questions demande lié a la commande n°: {{ $success->order_id }}<br><br></p>
 
-                        <p style="margin: 0; color: black">Objet:<br>
-                            <span style="color: #6b7280">{{ $success->subject }}</span><br><br>
-                        </p>
                         <p style="margin: 0; color: black">Nom et prénom:<br>
-                            <span style="color: #6b7280">{{ $success->fullname }}</span><br><br>
+                            <span style="color: #6b7280">{{ $success->name }}</span><br><br>
                         </p>
                         <p style="margin: 0; color: black"> Email:<br>
                             <span style="color: #6b7280">{{ $success->email }}</span><br><br>
@@ -111,7 +108,7 @@
                             <span style="color: #6b7280">{{ $success->phone }}</span><br><br>
                         </p>
                         <p style="margin: 0; color: black"> Message:<br>
-                            <span style="color: #6b7280">{{ $success->comment }}</span><br><br>
+                            <span style="color: #6b7280">{{ $success->question }}</span><br><br>
                         </p>
 
 

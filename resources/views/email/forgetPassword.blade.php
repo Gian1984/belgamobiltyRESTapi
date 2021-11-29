@@ -65,7 +65,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <!-- LOGO -->
     <tr>
-        <td bgcolor="#7c72dc" align="center">
+        <td bgcolor="#ffffff" align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
@@ -79,10 +79,10 @@
     </tr>
     <!-- HERO -->
     <tr>
-        <td bgcolor="#7c72dc" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="##d4ac6c" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
-                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                    <td bgcolor="#d4ac6c" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
                         <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Forget Password Email</h1>
                     </td>
                 </tr>
@@ -91,12 +91,12 @@
     </tr>
 
     <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#4c0414" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="margin: 0;"> You can reset password from bellow link:<br><br>
+                        <p style="margin: 0;">Vous pouvez réinitialiser le mot de passe à partir du lien ci-dessous:<br><br>
                             <a href={{url('https://belgamobility.com/Resetpassword/'.$token)}}>Reset Password</a></p>
                     </td>
                 </tr>
@@ -106,13 +106,13 @@
 
     <!-- FOOTER -->
     <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#4c0414" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
 
                 <!-- ADDRESS -->
                 <tr>
-                    <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
-                        <p style="margin: 0;">© 2021 Belga Mobility, Inc. All rights reserved.</p>
+                    <td bgcolor="#4c0414" align="left" style="padding: 0px 30px 30px 30px; color: #d4ac6c; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;">© 2021 Belga Mobility. All rights reserved.</p>
                     </td>
                 </tr>
             </table>

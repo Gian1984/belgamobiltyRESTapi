@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Faq;
+use Illuminate\Support\Facades\Mail;
 
 
 class FaqController extends Controller
@@ -25,6 +26,16 @@ class FaqController extends Controller
             'phone'=> $request->phone,
             'question'=> $request->question,
         ]);
+
+        $success = $request;
+
+        Mail::send('email.faqRequest', ['success' => $success], function($message) use($request){
+            $message->to($request->email);
+            $message->to('info@belgamobility.com');
+
+            $message->subject('Nouvelle questions liées aux commandes');
+        });
+
 
         return response()->json([
             'status' => (bool) $faq,

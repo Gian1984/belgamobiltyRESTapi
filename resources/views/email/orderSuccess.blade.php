@@ -65,7 +65,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <!-- LOGO -->
     <tr>
-        <td bgcolor="#7c72dc" align="center">
+        <td bgcolor="#ffffff" align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
@@ -79,11 +79,11 @@
     </tr>
     <!-- HERO -->
     <tr>
-        <td bgcolor="#7c72dc" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#d4ac6c" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
-                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Order summary</h1>
+                    <td bgcolor="#d4ac6c" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                        <h1 style="font-size: 32px; font-weight: 400; margin: 0;">Nouvel ordre</h1>
                     </td>
                 </tr>
             </table>
@@ -91,59 +91,59 @@
     </tr>
 
     <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#4c0414" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="margin: 0;"> Order Recap:<br><br></p>
+                        <p style="margin: 0;">Récapitulatif de la commande:<br><br></p>
 
 
-                        <p style="margin: 0; color: black">Hello {{ $success->name1 }} {{$success->name2}} ! <br>
-                            <span style="color: #6b7280">We have successfully received your reservation from {{$success->email}} account.</span><br><br>
+                        <p style="margin: 0; color: black">Bonjour {{ $success->name1 }} {{$success->name2}} ! <br>
+                            <span style="color: #6b7280">Nous avons reçu avec succès votre réservation de l'adresse e-mail {{$success->email}}.</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Pick-up address:<br>
+                        <p style="margin: 0; color: black">Départ:<br>
                            <span style="color: #6b7280">{{ $success->pickupaddress }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Drop-off address:<br>
+                        <p style="margin: 0; color: black"> Destination:<br>
                             <span style="color: #6b7280">{{ $success->dropoffaddress }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Duration:<br>
+                        <p style="margin: 0; color: black"> Durée:<br>
                             <span style="color: #6b7280">{{ $success->duration }}</span><br><br>
                         </p>
                         <p style="margin: 0; color: black"> Distance:<br>
                             <span style="color: #6b7280">{{ $success->distance }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Pick-up hour & date:<br>
+                        <p style="margin: 0; color: black"> Heure et date de départ:<br>
                             <span style="color: #6b7280">{{ $success->date }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Pick-up sign:<br>
+                        <p style="margin: 0; color: black"> Panneau d'accueil:<br>
                             <span style="color: #6b7280">{{ $success->pickupsign }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Reference code:<br>
+                        <p style="margin: 0; color: black"> Votre code de référence:<br>
                             <span style="color: #6b7280">{{ $success->referencecode }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Flight number:<br>
+                        <p style="margin: 0; color: black"> Numéro de vol:<br>
                             <span style="color: #6b7280">{{ $success->flight }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black"> Notes for the chauffeur :<br>
+                        <p style="margin: 0; color: black"> Commentaire pour le chauffeur :<br>
                             <span style="color: #6b7280">{{ $success->notes }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black">Additional passenger lastname:<br>
+                        <p style="margin: 0; color: black"> Prenom passager supplémentaire:<br>
                             <span style="color: #6b7280">{{ $success->lastname }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black">Additional passenger  Passenger firstname:<br>
+                        <p style="margin: 0; color: black"> Prenom passager supplémentaire:<br>
                             <span style="color: #6b7280">{{ $success->firstname }}</span><br><br>
                         </p>
-                        <p style="margin: 0; color: black">Additional passenger phone:<br>
+                        <p style="margin: 0; color: black">Téléphone passager supplémentaire:<br>
                             <span style="color: #6b7280">{{ $success->phone }}</span><br><br>
                         </p>
 
-                        <p style="margin: 0; color: black"> Total amount:<br>
+                        <p style="margin: 0; color: black"> Total:<br>
                             <span style="color: #6b7280">€ {{ $success->amount / 100}}</span><br><br>
                         </p>
 
-                        <p style="margin: 0; color: black">Thank you!<br><br></p>
+                        <p style="margin: 0; color: black">Merci !<br><br></p>
                     </td>
                 </tr>
             </table>
@@ -152,13 +152,13 @@
 
     <!-- FOOTER -->
     <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#4c0414" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
 
                 <!-- ADDRESS -->
                 <tr>
-                    <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
-                        <p style="margin: 0;">© 2021 Belga Mobility, Inc. All rights reserved.</p>
+                    <td bgcolor="#4c0414" align="left" style="padding: 0px 30px 30px 30px; color: #d4ac6c; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;">© 2021 Belga Mobility. All rights reserved.</p>
                     </td>
                 </tr>
             </table>
