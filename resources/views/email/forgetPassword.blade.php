@@ -79,7 +79,7 @@
     </tr>
     <!-- HERO -->
     <tr>
-        <td bgcolor="##d4ac6c" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#d4ac6c" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="480" >
                 <tr>
                     <td bgcolor="#d4ac6c" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">

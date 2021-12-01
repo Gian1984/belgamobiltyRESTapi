@@ -12,7 +12,7 @@ class NewsletterController extends Controller
     {
 
         $request->validate([
-            'email' => 'required|email|unique',
+            'email' => 'required|email',
         ]);
 
         $contact = Newsletter::create([
