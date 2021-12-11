@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
@@ -39,12 +40,15 @@ class UserController extends Controller
             'lastname' => 'required',
             'email' => 'required|email|unique:users',
             'phone' => 'required',
-            'password' => 'required',
-            'streetaddress' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'country' => 'required',
-            'zip' => 'required',
+            'password' => [
+                'required',
+                Password::min(8)
+                    ->mixedCase()
+                    ->letters()
+                    ->numbers()
+                    ->symbols(),
+            ],
+
         ]);
 
         if ($validator->fails()) {

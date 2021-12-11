@@ -9,6 +9,7 @@ use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\NewsletterController;
 use App\Http\Controllers\API\FaqController;
+use App\Http\Controllers\API\QuotationController;
 use App\Http\Controllers\API\ForgotPasswordController;
 
 /*
@@ -40,6 +41,8 @@ Route::post('upload-contact', [ContactController::class,'uploadContact']);
 Route::get('/products', [ProductController::class,'index']);
 Route::post('/upload-file', [ProductController::class,'uploadFile']);
 Route::get('/products/{product}', [ProductController::class,'show']);
+
+Route::resource('/quotations', QuotationController::class);
 
 //Mailchimp
 Route::post('newsletter', [NewsletterController::class,'subscribeNewsletter']);
