@@ -24,6 +24,8 @@ class ProductController extends Controller
             'kmhours' => $request->kmhours,
             'luggage'=> $request->luggage,
             'passengers'=> $request->passengers,
+            'forfait1'=> $request->forfait1,
+            'forfait2'=> $request->forfait2,
         ]);
 
         return response()->json([
@@ -51,7 +53,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $status = $product->update(
-            $request->only(['name', 'description', 'pricehour', 'pricekm','image','kmhours','luggage','passengers'])
+            $request->only(['name', 'description', 'pricehour', 'pricekm','image','kmhours','luggage','passengers','forfait1','forfait2'])
         );
 
         return response()->json([

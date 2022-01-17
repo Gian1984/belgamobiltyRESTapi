@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->string('kmhours');
             $table->string('luggage');
             $table->string('passengers');
+            $table->string('forfait1');
+            $table->string('forfait2');
             $table->timestamps();
             $table->softDeletes();
         });

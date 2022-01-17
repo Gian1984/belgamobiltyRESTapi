@@ -20,3 +20,14 @@ Route::get('/', function () {
 
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 
+//Route::get('ping', function(){
+//    $mailchimp = new \MailchimpMarketing\ApiClient();
+//
+//    $mailchimp->setConfig([
+//        'apiKey' => config('services.mailchimp.key'),
+//        'server' => 'us18'
+//    ]);
+//
+//    $response = $mailchimp->lists->getAllLists();
+//    ddd($response);
+//});

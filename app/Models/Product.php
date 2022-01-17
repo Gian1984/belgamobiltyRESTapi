@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'pricehour','pricekm', 'description', 'image','kmhours', 'luggage', 'passengers',
+        'name', 'pricehour','pricekm', 'description', 'image','kmhours', 'luggage', 'passengers','forfait1','forfait2',
     ];
 
     public function orders(){

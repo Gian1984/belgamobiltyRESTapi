@@ -28,13 +28,13 @@ class NewsletterController extends Controller
 
         $mailchimp->setConfig([
             'apiKey' => config('services.mailchimp.key'),
-            'server' => 'us5'
+            'server' => 'us18'
         ]);
 
-//    $response = $mailchimp->lists->getAllLists();  -->  get id of list
+//      $response = $mailchimp->lists->getAllLists();
 //    $response = $mailchimp->lists->getListMembersInfo('994e02591b'); --> get all the member by list id
 
-        $response = $mailchimp->lists->addListMember('994e02591b',[
+        $response = $mailchimp->lists->addListMember('88348c8f51',[
             'email_address'=> $request->email,
             'status'=>'subscribed',
         ]);

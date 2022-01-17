@@ -49,7 +49,7 @@ class QuotationController extends Controller
 
             Mail::send('email.paiementSuccess', ['success' => $success], function($message) use($request){
                 $message->to($request->email);
-                $message->to('info@belgamobility.com');
+                $message->to('booking@belgamobility.com');
 
                 $message->subject('Paiement effectué avec succès');
             });

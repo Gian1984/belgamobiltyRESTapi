@@ -75,7 +75,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td style="padding-bottom:15px;padding-left:30px;padding-right:30px;padding-top:30px;width:100%;">
-                                                <div align="center" style="line-height:10px"><a href="https://www.belgamobility.com/" style="outline:none" tabindex="-1" target="_blank"><img alt="Belga mobility SRL" src="https://belgamobility.com/img/email/BELGA-MOBILITY.png" style="display: block; height: auto; border: 0; width: 170px; max-width: 100%;" title="Belga mobility SRL" width="170"/></a></div>
+                                                <div align="center" style="line-height:10px"><a href="http://www.example.chttps://www.belgamobility.be/wp-content/uploads/2017/11/BELGA-MOBILITY.pngom" style="outline:none" tabindex="-1" target="_blank"><img alt="Belga mobility SRL" src="https://belgamobility.com/img/email/BELGA-MOBILITY.png" style="display: block; height: auto; border: 0; width: 170px; max-width: 100%;" title="Belga mobility SRL" width="170"/></a></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -98,7 +98,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td style="width:100%;padding-right:0px;padding-left:0px;">
-                                                <div align="center" style="line-height:10px"><img class="big" src="https://belgamobility.com/img/email/opendoor.jpeg" style="display: block; height: auto; border: 0; width: 640px; max-width: 100%;" width="640"/></div>
+                                                <div align="center" style="line-height:10px"><img class="big" src="https://belgamobility.com/img/email/interni.png" style="display: block; height: auto; border: 0; width: 640px; max-width: 100%;" width="640"/></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -123,7 +123,7 @@
                                             <td style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:30px;">
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 36px;"><span style="font-size:24px;color:#d4ac6c;"><strong>Cher {{ $success->firstname }} {{$success->lastname}}</strong></span></p>
+                                                        <p style="margin: 0; font-size: 16px; text-align: center; mso-line-height-alt: 36px;"><span style="font-size:24px;color:#d4ac6c;"><strong>Cher {{ $success->name1 }} {{$success->name2}}</strong></span></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -134,7 +134,7 @@
                                             <td style="padding-bottom:20px;padding-left:25px;padding-right:25px;padding-top:20px;">
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: center;">Nous vous confirmons la bonne réception de votre paiement, et vous remercions pour votre confiance.<br/>Toute notre équipe reste à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.<br/></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center;">Nous vous confirmons la bonne réception de votre commande, et vous remercions pour votre confiance.<br/>Toute notre équipe reste à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.<br/></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -153,11 +153,51 @@
                                                 <div align="center" style="font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;text-align:center;">
                                                     <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 90%; margin-left: auto; margin-right: auto; font-size: 13px;">
                                                         <tr>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;">Numéro de facture / devis:</td>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{$success->billing}}</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Départ:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->pickupaddress }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;" > Prix:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Destination:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->dropoffaddress }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Durée:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->duration }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Distance:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->distance }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Heure et date de départ:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->date }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Panneau d'accueil:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->pickupsign}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Votre code de référence:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->referencecode }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Numéro de vol:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->flight }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Commentaire pour le chauffeur :</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->notes }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Passager supplémentaire:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->firstname }} {{ $success->lastname }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Téléphone passager supplémentaire:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->phone }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"> Total:</td>
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">€ {{ $success->amount / 100}}</td>
                                                         </tr>
                                                     </table></div>
@@ -224,7 +264,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:20px;width:100%;">
-                                                <div align="center" style="line-height:10px"><img alt="Clean Icon" src="https://belgamobility.com/img/email/Comfortable.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Clean Icon" width="51"/></div>
+                                                <div align="center" style="line-height:10px"><img alt="Clean Icon" src="images/Comfortable.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Clean Icon" width="51"/></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -244,7 +284,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:20px;width:100%;">
-                                                <div align="center" style="line-height:10px"><img alt="Safety inspection icon" src="https://belgamobility.com/img/email/Safe.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Safety inspection icon" width="51"/></div>
+                                                <div align="center" style="line-height:10px"><img alt="Safety inspection icon" src="images/Safe.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Safety inspection icon" width="51"/></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -264,7 +304,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:20px;width:100%;">
-                                                <div align="center" style="line-height:10px"><img alt="Comfortable Seating Icon" src="https://belgamobility.com/img/email/Comfortable_1.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Comfortable Seating Icon" width="51"/></div>
+                                                <div align="center" style="line-height:10px"><img alt="Comfortable Seating Icon" src="images/Comfortable_1.png" style="display: block; height: auto; border: 0; width: 51px; max-width: 100%;" title="Comfortable Seating Icon" width="51"/></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -498,6 +538,42 @@
                 </tr>
                 </tbody>
             </table>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-10" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+                <tbody>
+                <tr>
+                    <td>
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 640px;" width="640">
+                            <tbody>
+                            <tr>
+                                <td class="column" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 0px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;" width="100%">
+                                    <table border="0" cellpadding="15" cellspacing="0" class="divider_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+                                        <tr>
+                                            <td>
+                                                <div align="center">
+                                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+                                                        <tr>
+                                                            <td class="divider_inner" style="font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;"><span> </span></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+                                        <tr>
+                                            <td style="width:100%;padding-right:0px;padding-left:0px;">
+                                                <div align="center" style="line-height:10px"><img class="big" src="https://belgamobility.com/img/email/highway.jpg" style="display: block; height: auto; border: 0; width: 640px; max-width: 100%;" width="640"/></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-11" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                 <tbody>
                 <tr>
@@ -509,7 +585,7 @@
                                     <table border="0" cellpadding="30" cellspacing="0" class="image_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td>
-                                                <div align="center" style="line-height:10px"><a href="https://www.belgamobility.com/" style="outline:none" tabindex="-1" target="_blank"><img alt="Your Logo" src="https://belgamobility.com/img/email/BELGA-MOBILITY.png" style="display: block; height: auto; border: 0; width: 170px; max-width: 100%;" title="Your Logo" width="170"/></a></div>
+                                                <div align="center" style="line-height:10px"><a href="http://www.example.com" style="outline:none" tabindex="-1" target="_blank"><img alt="Your Logo" src="https://belgamobility.com/img/email/BELGA-MOBILITY.png" style="display: block; height: auto; border: 0; width: 170px; max-width: 100%;" title="Your Logo" width="170"/></a></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -518,9 +594,9 @@
                                             <td>
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #ffffff; line-height: 1.2;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: center;">+32 485 20 91 91<br/><a href="mailto:booking@belgamobility.be?subject=Mail from belgamobility.com" rel="noopener" style="text-decoration: underline; color: #d4ac6c;" target="_blank" title="https://www.belgamobility.com/">booking@belgamobility.be</a></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center;">+32 485 20 91 91<br/><a href="mailto:http://www.example.com" rel="noopener" style="text-decoration: underline; color: #d4ac6c;" target="_blank" title="http://www.example.com">booking@belgamobility.be</a></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: center;">Rue Eugene Toussaint 47 1083 - Bruxelles</p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: center;"><a href="https://www.belgamobility.com/" rel="noopener" style="text-decoration: underline; color: #d4ac6c;" target="_blank">https://www.belgamobility.com/</a></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center;"><a href="http://www.example.com" rel="noopener" style="text-decoration: underline; color: #d4ac6c;" target="_blank">https://www.belgamobility.com/</a></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -531,9 +607,9 @@
                                             <td>
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="social-table" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="138px">
                                                     <tr>
-                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.instagram.com/belgamobility.be/" target="_blank"><img alt="Instagram" height="32" src="https://belgamobility.com/img/email/instagram2x.png" style="display: block; height: auto; border: 0;" title="instagram" width="32"/></a></td>
-                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.facebook.com/BELGAmobility.be" target="_blank"><img alt="Facebook" height="32" src="https://belgamobility.com/img/email/facebook2x.png" style="display: block; height: auto; border: 0;" title="facebook" width="32"/></a></td>
-                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.linkedin.com/in/abdelilah-jiari-a7ba671b9/" target="_blank"><img alt="LinkedIn" height="32" src="https://belgamobility.com/img/email/linkedin2x.png" style="display: block; height: auto; border: 0;" title="LinkedIn" width="32"/></a></td>
+                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.instagram.com/belgamobility.be/" target="_blank"><img alt="Instagram" height="32" src="images/instagram2x.png" style="display: block; height: auto; border: 0;" title="instagram" width="32"/></a></td>
+                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.facebook.com/BELGAmobility.be" target="_blank"><img alt="Facebook" height="32" src="images/facebook2x.png" style="display: block; height: auto; border: 0;" title="facebook" width="32"/></a></td>
+                                                        <td style="padding:0 7px 0 7px;"><a href="https://www.linkedin.com/in/abdelilah-jiari-a7ba671b9/" target="_blank"><img alt="LinkedIn" height="32" src="images/linkedin2x.png" style="display: block; height: auto; border: 0;" title="LinkedIn" width="32"/></a></td>
                                                     </tr>
                                                 </table>
                                             </td>

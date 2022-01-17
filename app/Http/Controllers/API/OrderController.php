@@ -7,8 +7,10 @@ use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Product;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -67,6 +69,26 @@ class OrderController extends Controller
                 'is_complete' => $request->is_complete,
             ]);
 
+//            return $order;
+
+            $user = Auth::user();
+            $order = Order::where('transactionID', $request->transactionID)->first();
+
+            Mail::send('email.orderSuccess', [ 'order'=> $order, 'user'=> $user ], function($message) use($request){
+
+//            'success' => $success,
+
+            $order = Order::where('transactionID', $request->transactionID)->first();
+
+                $message->to(Auth::user()->email);
+                $message->to('booking@belgamobility.com');
+//            $order = DB::table('orders')->where(['transactionID'=> $request->transactionID ])->get('id');
+
+
+                $message->subject('Récapitulatif de la commande');
+
+            });
+
             return $order;
 
         } catch (\Exception $e) {
@@ -102,17 +124,41 @@ class OrderController extends Controller
         ]);
     }
 
+    public function find(Request $request)
+    {
+        return response()->json(Order::where('transactionID', $request->transactionID)->get(),200);
+    }
+
+
     public function submitOrderConfirm(Request $request)
     {
 
         $success = $request;
+//        $o = Order::select('id')
+//            ->where('transactionID', '=', $request->transactionID)
+//            ->get();
+//        $order = $o[0]['id'];
+//        $order = Order::where('transactionID', $request->transactionID)->first();
+//        $order = DB::table('orders')->where(['transactionID'=> $request->transactionID ])->get('id');
 
-        Mail::send('email.orderSuccess', ['success' => $success], function($message) use($request){
-            $message->to($request->email);
-            $message->to('info@belgamobility.com');
 
-            $message->subject('Récapitulatif de la commande');
-        });
+//        Mail::send('email.orderSuccess', [ 'success' => $success ], function($message) use($request){
+
+//            'success' => $success,
+
+//            $order = Order::where('transactionID', $request->transactionID)->first();
+
+//            $message->to($request->email);
+//            $message->to('booking@belgamobility.com');
+//            $order = DB::table('orders')->where(['transactionID'=> $request->transactionID ])->get('id');
+
+//            $order = Order::select('id')
+//                ->where('transactionID', '=', $request->transactionID)
+//                ->get();
+
+//            $message->subject('Récapitulatif de la commande');
+//
+//        });
 
         return response()->json($success);
     }
