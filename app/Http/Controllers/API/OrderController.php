@@ -40,7 +40,8 @@ class OrderController extends Controller
 
             $payment = $user->charge(
                 $request->input('amount'),
-                $request->input('payment_method_id')
+                $request->input('payment_method_id'),
+                ["receipt_email" => Auth::user()->email,]
             );
 
             $payment = $payment->asStripePaymentIntent();
@@ -67,29 +68,45 @@ class OrderController extends Controller
                 'lastFour'=> $request->lastFour,
                 'expire'=> $request->expire,
                 'is_complete' => $request->is_complete,
+                'language'=> $request->language,
             ]);
 
-//            return $order;
 
             $user = Auth::user();
             $order = Order::where('transactionID', $request->transactionID)->first();
 
-            Mail::send('email.orderSuccess', [ 'order'=> $order, 'user'=> $user ], function($message) use($request){
+            if ( $order->language == 'FR') {
 
-//            'success' => $success,
-
-            $order = Order::where('transactionID', $request->transactionID)->first();
-
-                $message->to(Auth::user()->email);
-                $message->to('booking@belgamobility.com');
-//            $order = DB::table('orders')->where(['transactionID'=> $request->transactionID ])->get('id');
+                Mail::send('email.orderSuccess', ['order' => $order, 'user' => $user], function ($message) use ($request) {
 
 
-                $message->subject('Récapitulatif de la commande');
+                    $order = Order::where('transactionID', $request->transactionID)->first();
 
-            });
+                    $message->to(Auth::user()->email);
+                    $message->to('booking@belgamobility.com');
 
-            return $order;
+                    $message->subject('Récapitulatif de la commande');
+
+                });
+
+                return $order;
+
+            } else {
+
+
+                Mail::send('email.orderSuccessEn', ['order' => $order, 'user' => $user], function ($message) use ($request) {
+
+
+                    $order = Order::where('transactionID', $request->transactionID)->first();
+
+                    $message->to(Auth::user()->email);
+                    $message->to('booking@belgamobility.com');
+
+                    $message->subject('Récapitulatif de la commande');
+
+                });
+
+            }
 
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);

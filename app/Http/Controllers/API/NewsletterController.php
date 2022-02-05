@@ -32,7 +32,7 @@ class NewsletterController extends Controller
         ]);
 
 //      $response = $mailchimp->lists->getAllLists();
-//    $response = $mailchimp->lists->getListMembersInfo('994e02591b'); --> get all the member by list id
+//      $response = $mailchimp->lists->getListMembersInfo('994e02591b'); --> get all the member by list id
 
         $response = $mailchimp->lists->addListMember('88348c8f51',[
             'email_address'=> $request->email,

@@ -134,7 +134,9 @@
                                             <td style="padding-bottom:20px;padding-left:25px;padding-right:25px;padding-top:20px;">
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: center;">Nous vous confirmons la bonne réception de votre paiement, et vous remercions pour votre confiance.<br/>Toute notre équipe reste à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.<br/></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center;">
+                                                            Nous vous confirmons la bonne réception de votre paiement, et vous remercions pour votre confiance.<br/>Toute notre équipe reste à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.<br/><br/>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -143,7 +145,9 @@
                                     <table border="0" cellpadding="20" cellspacing="0" class="heading_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td>
-                                                <h1 style="margin: 0; color: #d4ac6c; font-size: 15px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: normal; letter-spacing: normal; margin-top: 0; margin-bottom: 0;"><strong>Ci-dessous le récapitulatif de(s) prestation(s) enregistrées par nos services :</strong></h1>
+                                                <h1 style="margin: 0; color: #d4ac6c; font-size: 15px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: normal; letter-spacing: normal; margin-top: 0; margin-bottom: 0;">
+                                                    <strong>Ci-dessous le récapitulatif de(s) question(s) enregistrées par nos système:</strong><br><br>
+                                                </h1>
                                             </td>
                                         </tr>
                                     </table>
@@ -153,7 +157,15 @@
                                                 <div align="center" style="font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;text-align:center;">
                                                     <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 90%; margin-left: auto; margin-right: auto; font-size: 13px;">
                                                         <tr>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;">Numéro de facture / devis:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;">Nom & Prénom:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->firstname }} {{$success->lastname}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;">Email:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{$success->email}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;">Numéro de facture - devis:</td>
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{$success->billing}}</td>
                                                         </tr>
                                                         <tr>
@@ -169,8 +181,8 @@
                                             <td>
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">Vous pouvez modifier ou annuler gratuitement votre transfert jusqu'à 24 heure avant le départ. Pour les services horaires de plus de 3 heures, jusqu'à 48 heures avant le départ.</span></p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Si vous souhaitez changer ou annuler votre réservation, vous pouvez le faire par e-mail à l'adresse booking@belgamobility.be, ou par téléphone +32 485 209 191.</span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">Vous pouvez modifier ou annuler gratuitement votre transfert jusqu'à 24 heures avant le départ. Pour les services horaires de plus de 3 heures, jusqu'à 48 heures avant le départ.</span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Si vous souhaitez modifier ou annuler votre réservation, vous pouvez le faire par e-mail à booking@belgamobility.com.</span></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Cordialement,</span></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">L’équipe Belga Mobility</span></p>
                                                     </div>

@@ -23,6 +23,7 @@ class CreateFaqsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('question')->nullable();
             $table->boolean('was_answered')->default(false);
+            $table->string('language')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

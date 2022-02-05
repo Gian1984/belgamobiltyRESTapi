@@ -37,6 +37,7 @@ class CreateOrdersTable extends Migration
             $table->string('lastFour')->nullable();
             $table->string('expire')->nullable();
             $table->boolean('is_complete')->default(false);
+            $table->string('language')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

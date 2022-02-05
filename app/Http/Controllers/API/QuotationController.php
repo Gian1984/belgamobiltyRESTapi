@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Quotation;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class QuotationController extends Controller
@@ -26,7 +27,8 @@ class QuotationController extends Controller
 
             $payment = $user->charge(
                 $request->input('amount'),
-                $request->input('payment_method_id')
+                $request->input('payment_method_id'),
+                ["receipt_email" => $request->input('email'),]
             );
 
             $payment = $payment->asStripePaymentIntent();
@@ -43,19 +45,33 @@ class QuotationController extends Controller
                 'lastFour'=> $request->lastFour,
                 'expire'=> $request->expire,
                 'billing'=> $request->billing,
+                'language'=> $request->language,
             ]);
 
             $success = $request;
 
-            Mail::send('email.paiementSuccess', ['success' => $success], function($message) use($request){
-                $message->to($request->email);
-                $message->to('booking@belgamobility.com');
+            if ( $success->language == 'FR') {
 
-                $message->subject('Paiement effectué avec succès');
-            });
+                Mail::send('email.paiementSuccess', ['success' => $success], function ($message) use ($request) {
+                    $message->to($request->email);
+                    $message->to('booking@belgamobility.com');
 
+                    $message->subject('Paiement effectué avec succès');
+                });
 
-            return $quotation;
+                return $quotation;
+
+            } else {
+
+                Mail::send('email.paimentSuccessEn', ['success' => $success], function ($message) use ($request) {
+                    $message->to($request->email);
+                    $message->to('booking@belgamobility.com');
+
+                    $message->subject('Paiement effectué avec succès');
+                });
+
+                return $quotation;
+            }
 
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);

@@ -134,7 +134,9 @@
                                             <td style="padding-bottom:20px;padding-left:25px;padding-right:25px;padding-top:20px;">
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: left;">Votre demande de contact a été reçu avec succès par notre équipe commercial.<br>Nous la traitons dans les plus brefs délais et revenons vers vous avec une solution sur-mesure.<br/></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: left;">
+                                                            Votre demande de contact a été reçu avec succès par notre équipe commercial.<br>Nous la traitons dans les plus brefs délais et revenons vers vous avec une solution sur-mesure.<br/><br>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -143,7 +145,9 @@
                                     <table border="0" cellpadding="20" cellspacing="0" class="heading_block" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td>
-                                                <h1 style="margin: 0; color: #d4ac6c; font-size: 15px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: normal; letter-spacing: normal; margin-top: 0; margin-bottom: 0;"><strong>Ci-dessous le récapitulatif de(s) info(s) enregistrées par nos système:</strong></h1>
+                                                <h1 style="margin: 0; color: #d4ac6c; font-size: 15px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: normal; letter-spacing: normal; margin-top: 0; margin-bottom: 0;">
+                                                    <strong>Ci-dessous le récapitulatif de(s) info(s) enregistrées par nos système:</strong><br>
+                                                </h1>
                                             </td>
                                         </tr>
                                     </table>
@@ -157,7 +161,7 @@
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->subject }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;" >Nom et prénom::</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;" >Nom & prénom:</td>
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->fullname }}</td>
                                                         </tr>
                                                         <tr>
@@ -165,7 +169,7 @@
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"> {{ $success->email}}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;" >Téléphone:</td>
+                                                            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-weight: 800;" >Phone:</td>
                                                             <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ $success->phone}}</td>
                                                         </tr>
                                                         <tr>
@@ -181,7 +185,7 @@
                                             <td>
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">Nous restons à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.</span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">Nous restons à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.</span></p><br/>
                                                         <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Cordialement,</span></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">L’équipe Belga Mobility</span></p>
                                                     </div>

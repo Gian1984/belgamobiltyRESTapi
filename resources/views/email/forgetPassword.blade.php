@@ -123,7 +123,7 @@
                                             <td style="padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:30px;">
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 36px;"><span style="font-size:24px;color:#d4ac6c;"><strong>Cher client</strong></span></p>
+                                                        <p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 36px;"><span style="font-size:24px;color:#d4ac6c;"><strong>Cher client / Dear customer:</strong></span></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -135,8 +135,12 @@
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;">
                                                         <p style="margin: 0; font-size: 14px; text-align: left;">Vous avez demandé à générer un nouveau mot de passe. Pour le réinitialiser, cliquez sur le lien ci-dessous:<br><br>
-                                                            <a style="text-decoration: underline; font-weight: bold; font-size: 18px; color: #d4ac6c;" href={{url('https://belgamobility.com/Resetpassword/'.$token)}}>Réinitialiser votre mot de passe</a></p>
-                                                        <p style="margin: 0; font-size: 10px; text-align: left;">Si vous n’êtes pas le demandeur de cette réinitialisation de mot de passe, veuillez ignorer cet e-mail.</p>
+                                                                       You have requested to generate a new password. To reset it, click on the link below:<br><br>
+                                                            <a style="text-decoration: underline; font-weight: bold; font-size: 18px; color: #d4ac6c;" href={{url('https://belgamobility.com/Resetpassword/'.$token)}}>Réinitialiser votre mot de passe / Reset password</a></p>
+                                                        <p style="margin: 0; font-size: 10px; text-align: left;">
+                                                            Si vous n’êtes pas le demandeur de cette réinitialisation de mot de passe, veuillez ignorer cet e-mail.<br>
+                                                            If you have not required this password reset, please ignore this email.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -147,8 +151,11 @@
                                             <td>
                                                 <div style="font-family: sans-serif">
                                                     <div style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">Nous restons à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.</span></p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Cordialement,</span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><span style="font-size:14px;">
+                                                                Nous restons à votre écoute pour répondre aux éventuelles questions, ou prendre en note vos remarques complémentaires.<br><br>
+                                                                We remain at your disposal to answer any questions, or take note of your additional comments.
+                                                            </span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">Cordialement / Cordially,</span></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: justify;"><br/><span style="font-size:14px;">L’équipe Belga Mobility</span></p>
                                                     </div>
                                                 </div>

@@ -13,7 +13,7 @@ class Faq extends Model
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $fillable = [
-        'product_id', 'user_id','order_id', 'name', 'email', 'phone', 'question'
+        'product_id', 'user_id','order_id', 'name', 'email', 'phone', 'question','language'
     ];
 
     public function orders(){

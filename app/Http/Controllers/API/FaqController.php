@@ -25,16 +25,30 @@ class FaqController extends Controller
             'email'=> $request->email,
             'phone'=> $request->phone,
             'question'=> $request->question,
+            'language'=> $request->language,
         ]);
 
         $success = $request;
 
-        Mail::send('email.faqRequest', ['success' => $success], function($message) use($request){
-            $message->to($request->email);
-            $message->to('booking@belgamobility.com');
+        if ( $success->language == 'FR') {
 
-            $message->subject('Nouvelle questions liées aux commandes');
-        });
+            Mail::send('email.faqRequest', ['success' => $success], function ($message) use ($request) {
+                $message->to($request->email);
+                $message->to('booking@belgamobility.com');
+
+                $message->subject('Nouvelle questions liées aux commandes');
+            });
+
+        } else {
+
+            Mail::send('email.faqRequestEn', ['success' => $success], function ($message) use ($request) {
+                $message->to($request->email);
+                $message->to('booking@belgamobility.com');
+
+                $message->subject('Nouvelle questions liées aux commandes');
+            });
+
+        }
 
 
         return response()->json([

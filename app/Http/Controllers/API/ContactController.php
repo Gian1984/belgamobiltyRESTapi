@@ -23,18 +23,33 @@ class ContactController extends Controller
             'email'=> $request->email,
             'phone'=> $request->phone,
             'subject'=> $request->subject,
+            'reason'=> $request->reason,
             'comment'=> $request->comment,
             'time'=> Carbon::now('Europe/Rome'),
+            'language'=> $request->language,
         ]);
 
         $success = $request;
 
-        Mail::send('email.contactRequest', ['success' => $success], function($message) use($request){
-            $message->to($request->email);
-            $message->to('booking@belgamobility.com');
+        if ( $success->language == 'FR') {
 
-            $message->subject('Nouvelle demande de contact');
-        });
+            Mail::send('email.contactRequest', ['success' => $success], function ($message) use ($request) {
+                $message->to($request->email);
+                $message->to('booking@belgamobility.com');
+
+                $message->subject('Nouvelle demande de contact');
+            });
+
+        } else {
+
+            Mail::send('email.contactRequestEn', ['success' => $success], function ($message) use ($request) {
+                $message->to($request->email);
+                $message->to('booking@belgamobility.com');
+
+                $message->subject('Nouvelle demande de contact');
+            });
+
+        }
 
         return response()->json( $contact,200);
     }

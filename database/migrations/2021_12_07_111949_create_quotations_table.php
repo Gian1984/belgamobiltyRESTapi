@@ -25,6 +25,7 @@ class CreateQuotationsTable extends Migration
             $table->string('lastFour')->nullable();
             $table->string('expire')->nullable();
             $table->string('billing')->nullable();
+            $table->string('language')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

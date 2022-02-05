@@ -33,7 +33,8 @@ class Order extends Model
         'cardBrand',
         'lastFour',
         'expire',
-        'is_complete'
+        'is_complete',
+        'language'
     ];
 
     public function user()

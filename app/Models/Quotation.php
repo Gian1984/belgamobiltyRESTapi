@@ -21,6 +21,7 @@ class Quotation extends Model
         'lastFour',
         'expire',
         'billing',
+        'language'
     ];
 
 }
